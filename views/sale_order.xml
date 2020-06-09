@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-<!-- TODO -->
+    <record id="sale_order_view_tree" model="ir.ui.view">
+        <field name="name">sale.order.view.tree.inherit.admin_fee</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <field name="amount_total" position="after">
+                <field name="admin_fee" string="Relationship Benefit" sum="Total Relationship Benefit"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="sale_order_view_form" model="ir.ui.view">
+        <field name="name">sale.order.view.form.inherit.admin_fee</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="payment_term_id" position="after">
+                <field name="admin_fee_percentage"/>
+            </field>
+
+            <field name="amount_tax" position="after">
+                <field name="amount_with_admin_fee" attrs="{'invisible': [('admin_fee', '=', 0)]}"/>
+                <field name="admin_fee" string="Relationship Benefit" attrs="{'invisible': [('admin_fee', '=', 0)]}"/>
+            </field>
+        </field>
+    </record>
 </odoo>

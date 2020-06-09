@@ -13,6 +13,8 @@
         # data
         # reports
         # views
+        'views/account_invoice.xml',
         'views/res_partner.xml',
+        'views/sale_order.xml',
     ],
 }
