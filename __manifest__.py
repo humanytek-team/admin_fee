@@ -13,5 +13,6 @@
         # data
         # reports
         # views
+        'views/res_partner.xml',
     ],
 }
