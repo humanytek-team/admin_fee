@@ -8,6 +8,11 @@
             <field name="payment_term_id" position="after">
                 <field name="admin_fee_percentage"/>
             </field>
+
+            <field name="amount_tax" position="after">
+                <field name="amount_with_admin_fee" attrs="{'invisible': [('admin_fee', '=', 0)]}"/>
+                <field name="admin_fee" string="Relationship Benefit" attrs="{'invisible': [('admin_fee', '=', 0)]}"/>
+            </field>
         </field>
     </record>
 </odoo>
