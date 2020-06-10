@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Admin Fee',
-    'version': '0.1.0',
+    'version': '1.0.0',
     'author': 'Humanytek',
     'website': 'https://github.com/humanytek-team/admin_fee',
     'depends': [
@@ -12,6 +12,8 @@
         # security
         # data
         # reports
+        'reports/account_invoice.xml',
+        'reports/sale_order.xml',
         # views
         'views/account_invoice.xml',
         'views/res_partner.xml',
