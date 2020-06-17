@@ -23,7 +23,8 @@ class SaleOrder(models.Model):
     @api.depends('partner_id')
     def _get_admin_fee_percentage(self):
         for order in self:
-            order.admin_fee_percentage = order.partner_id.admin_fee_percentage
+            if not order.admin_fee_percentage:
+                order.admin_fee_percentage = order.partner_id.admin_fee_percentage
 
     @api.depends('admin_fee_percentage', 'amount_total')
     def _get_admin_fee(self):
