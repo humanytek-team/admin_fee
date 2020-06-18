@@ -20,11 +20,9 @@ class AccountInvoice(models.Model):
         store=True,
     )
 
-    @api.depends('partner_id')
+    @api.onchange('partner_id')
     def _get_admin_fee_percentage(self):
-        for order in self:
-            if not order.admin_fee_percentage:
-                order.admin_fee_percentage = order.partner_id.admin_fee_percentage
+        self.admin_fee_percentage = self.partner_id.admin_fee_percentage
 
     @api.depends('admin_fee_percentage', 'amount_total')
     def _get_admin_fee(self):
