@@ -7,9 +7,6 @@ class SaleOrder(models.Model):
 
     admin_fee_percentage = fields.Float(
         string='Admin Fee %',
-        compute='_get_admin_fee_percentage',
-        store=True,
-        readonly=False,
     )
     admin_fee = fields.Monetary(
         compute='_get_admin_fee',
