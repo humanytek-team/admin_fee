@@ -1,23 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="sale_report_admin_fee" inherit_id="sale.report_saleorder_document">
         <xpath expr="//tr[hasclass('o_subtotal')]" position="before">
-            <tr class="border-black o_full-price" style="">
-                <td>
-                    <strong>Full Price</strong>
-                </td>
-                <td class="text-right">
-                    <span t-field="doc.amount_with_admin_fee"/>
-                </td>
-            </tr>
-            <tr class="border-black o_relationship-benefit" style="">
-                <td>
-                    <strong>Relationship Benefit</strong>
-                </td>
-                <td class="text-right">
-                    <span t-field="doc.admin_fee"/>
-                </td>
-            </tr>
+            <t t-if="doc.admin_fee">
+                <tr class="border-black o_full-price" style="">
+                    <td>
+                        <strong>Full Price</strong>
+                    </td>
+                    <td class="text-right">
+                        <span t-field="doc.amount_with_admin_fee"/>
+                    </td>
+                </tr>
+                <tr class="border-black o_relationship-benefit" style="">
+                    <td>
+                        <strong>Relationship Benefit</strong>
+                    </td>
+                    <td class="text-right">
+                        <span t-field="doc.admin_fee"/>
+                    </td>
+                </tr>
+            </t>
         </xpath>
     </template>
 </odoo>
