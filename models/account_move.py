@@ -2,8 +2,8 @@
 from odoo import _, api, fields, models
 
 
-class AccountInvoice(models.Model):
-    _inherit = "account.invoice"
+class AccountMove(models.Model):
+    _inherit = "account.move"
 
     admin_fee_percentage = fields.Float(
         string="Admin Fee %",
