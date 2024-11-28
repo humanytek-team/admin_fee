@@ -2,12 +2,14 @@
 from odoo.tests.common import TransactionCase
 
 
-class AccountInvoice(TransactionCase):
+class AccountMove(TransactionCase):
     def prepare_invoice(self, admin_fee_percentage, total):
         partner_id = self.env["res.partner"].search([], limit=1)
-        invoice_id = self.env["account.invoice"].create(
+        # Cambiando account.invoice por account.move
+        invoice_id = self.env["account.move"].create(
             {
                 "partner_id": partner_id.id,
+                "move_type": "out_invoice",  # Aseguramos que es una factura de cliente
             }
         )
         invoice_id.admin_fee_percentage = admin_fee_percentage

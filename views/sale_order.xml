@@ -5,9 +5,9 @@
     <field name="model">sale.order</field>
     <field name="inherit_id" ref="sale.view_quotation_tree"/>
     <field name="arch" type="xml">
-      <field name="amount_total" position="after">
-        <field name="admin_fee" string="Relationship Benefit" sum="Total Relationship Benefit"/>
-      </field>
+      <xpath expr="//field[@name='amount_total']" position="after">
+        <field name="admin_fee" string="Relationship Benefit" modifiers="{'sum': 'Total Relationship Benefit'}"/>
+      </xpath>
     </field>
   </record>
 
@@ -16,15 +16,15 @@
     <field name="model">sale.order</field>
     <field name="inherit_id" ref="sale.view_order_form"/>
     <field name="arch" type="xml">
-      <field name="payment_term_id" position="after">
+      <xpath expr="//field[@name='payment_term_id']" position="after">
         <field name="admin_fee_percentage"/>
-      </field>
+      </xpath>
 
-      <field name="tax_totals_json" position="after">
-        <field name="amount_with_admin_fee" attrs="{'invisible': [('admin_fee', '=', 0)]}"/>
+      <xpath expr="//field[@name='tax_totals_json']" position="after">
+        <field name="amount_with_admin_fee" modifiers="{'invisible': [('admin_fee', '=', 0)]}"/>
         <field name="admin_fee" string="Relationship Benefit"
-          attrs="{'invisible': [('admin_fee', '=', 0)]}"/>
-      </field>
+          modifiers="{'invisible': [('admin_fee', '=', 0)]}"/>
+      </xpath>
     </field>
   </record>
 </odoo>
