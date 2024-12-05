@@ -5,7 +5,7 @@
     "author": "Humanytek",
     "website": "https://github.com/humanytek-team/admin_fee",
     "depends": [
-        "account",
+        "account_accountant",
         "sale_management",
     ],
     "data": [
