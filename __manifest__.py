@@ -6,7 +6,7 @@
     "website": "https://github.com/humanytek-team/admin_fee",
     "depends": [
         "account",
-        "sale",
+        "sale_management",
     ],
     "data": [
         # security
