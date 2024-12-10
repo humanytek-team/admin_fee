@@ -9,15 +9,11 @@
         "sale_management",
     ],
     "data": [
-        # security
-        # data
-        # reports
-        "reports/account_move.xml",
-        "reports/sale_order.xml",
-        # views
-        "views/account_move.xml",
-        "views/res_partner.xml",
-        "views/sale_order.xml",
+        # "reports/account_move.xml",
+        # "reports/sale_order.xml",
+        # "views/account_move.xml",
+        # "views/res_partner.xml",
+        # "views/sale_order.xml",
     ],
     "installable": True,
     "application": False,
