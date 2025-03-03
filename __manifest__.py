@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Admin Fee",
-    "version": "17.0.1.3.2",
+    "version": "1.0",
     "author": "Humanytek",
     "website": "https://github.com/humanytek-team/admin_fee",
     "depends": [
