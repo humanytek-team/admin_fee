@@ -19,4 +19,5 @@
         "views/res_partner.xml",
         "views/sale_order.xml",
     ],
+    "license": "AGPL-3",
 }
