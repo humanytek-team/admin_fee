@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <template id="account_report_admin_fee" inherit_id="account.report_invoice_document">
-    <t t-call="account.document_tax_totals" position="before">
+    <t t-if="o.tax_totals" t-call="account.document_tax_totals" position="before">
       <t t-if="o.admin_fee">
         <tr class="border-black o_full-price">
           <td>

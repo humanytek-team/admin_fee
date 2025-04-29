@@ -20,10 +20,9 @@
         <field name="admin_fee_percentage"/>
       </field>
 
-      <field name="tax_totals_json" position="after">
-        <field name="amount_with_admin_fee" attrs="{'invisible': [('admin_fee', '=', 0)]}"/>
-        <field name="admin_fee" string="Relationship Benefit"
-          attrs="{'invisible': [('admin_fee', '=', 0)]}"/>
+      <field name="tax_totals" position="after">
+        <field name="amount_with_admin_fee" invisible="admin_fee == 0"/>
+        <field name="admin_fee" string="Relationship Benefit" invisible="admin_fee == 0"/>
       </field>
     </field>
   </record>
